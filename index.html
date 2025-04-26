@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>olla itu baik hati dan tidak sombongkan?</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background-color: #ffe6e6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #cc3366;
+    }
+    .buttons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .button-yes, .button-no {
+      padding: 10px 20px;
+      font-size: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .button-yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .button-no {
+      background-color: #f44336;
+      color: white;
+    }
+    .cat {
+      margin-top: 20px;
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>olla itu baik hati dan tidak sombongkan?</h1>
+
+  <div class="buttons">
+    <button class="button-yes" id="yesButton">Yes</button>
+    <button class="button-no" id="noButton">No</button>
+  </div>
+
+  <img src="-467562041769926403.MP4" class="cat" alt="Cute Cat">
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+
+    let scale = 1;
+    let step = 0;
+
+    const noMessages = [
+      "Really sure??",
+      "Are you positive?",
+      "that's really true,right?...",
+      "Just think about it!",
+      "If you say no, I will be really sad...",
+      "I will be very sad..."
+    ];
+
+    noButton.addEventListener('click', () => {
+      // Membesarkan tombol YES
+      scale += 0.5;
+      yesButton.style.transform = `scale(${scale})`;
+
+      // Update teks tombol NO
+      if (step < noMessages.length) {
+        noButton.textContent = noMessages[step];
+        step++;
+      }
+    });
+    
+  </script>
+
+</body>
+</html>
